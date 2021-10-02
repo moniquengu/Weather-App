@@ -12,10 +12,48 @@
       integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
       crossorigin="anonymous"
     />
+    <script src="https://kit.fontawesome.com/52089c372c.js" crossorigin="anonymous"></script>
     <title>Weather</title>
   </head>
   <body>
-    <h1>Weather App</h1>
+    <div class="container">
+      <h1>Witchy Weather App</h1>
+      <div class="weatherApp">
+        <div class="forcastMain">
+          <div class="row">
+      <div class="space1 col-3"></div>
+      <section class="crystalBall col-3">
+        <img src="img/sparkles.png" alt="sparkle" class="sparkle">
+        <div class="ballSpace"></div>
+        <i class="fas fa-circle"></i>
+        <hr class="line1">
+        <div class="mainTemperature"><span class="mainTempText" id="mainTemp-number">17</span><span class="mainTempDegrees"> <a href="#" id="mainTemp-Celcius">℃</a></span>|<span class="mainTempFarenheit"><a href="#" id="mainTemp-Farenheit">℉</a></span></div>
+        <div class="mainWeatherStatus">Clear</div>
+      </section>
+
+      <div class="weatherInfoCurrent col-3">
+        <div class="row">
+         <form action="" class="searchGroup col-8" id= "city-search-bar">
+          <input class="form-control" type="text" placeholder="Enter a city name" id="city-search"/>
+        </form>
+        <button type="button" class="btn btn-warning currentCoord col-4" id="buttonGPS">Current</button>
+      </div>
+        <div class="weatherText">
+          <div class="row">
+            <div class="weatherTextSpace1 col-1"></div>
+            <div class="col-10">
+               
+                <div class="time" id="time-day">
+                  <span class="todayDay" id="current-day">MON</span> <span class="todayTime" id="current-time">9:45</span></div>
+                <div class="location" id = "city-location">Brisbane</div>
+                <div class="mainDate">SEPTEMBER 12</div>
+                <span class="humidity">H: 48%</span>
+                <span class="wind">W: 13km/h</span>
+            </div>  
+          </div>
+        </div>
+      </div>
+    </div>
     <link rel="stylesheet" href="src/app.js" />
   </body>
 </html>
