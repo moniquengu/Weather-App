@@ -34,20 +34,36 @@ h1 {
 .fa-circle {
   font-size: 90px;
   color: rgba(255, 220, 100, 1);
+  padding-bottom: 15px;
 }
 .line1 {
-  width: 50px;
+  width: 100px;
   color: rgba(152, 128, 191, 1);
-  margin-bottom: 5px;
+  margin: 5px auto;
 }
-.mainTemperature {
+
+#mainTemp-number {
   color: rgb(250, 231, 144);
   font-family: "Sawarabi Mincho", sans-serif;
+  font-size: 25px;
+  line-height: 32px;
 }
+.tempLine,
+#mainTemp-Farenheit,
+#mainTemp-Celcius {
+  color: rgb(250, 231, 144);
+  font-family: "Sawarabi Mincho", sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  vertical-align: top;
+  text-align: left;
+  letter-spacing: -1px;
+}
+
 .mainWeatherStatus {
   color: rgba(118, 84, 173, 0.9);
   font-family: "Sawarabi Mincho", sans-serif;
-  font-size: 15px;
+  font-size: 17px;
 }
 #city-search {
   width: 190px;
