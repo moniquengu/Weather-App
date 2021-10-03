@@ -104,3 +104,13 @@ h1 {
 .wind {
   font-size: 16px;
 }
+#line2 {
+  border: 0;
+  height: 2px;
+  background-image: linear-gradient(
+    to right,
+    rgba(243, 232, 234, 1),
+    rgb(101, 70, 150),
+    rgba(243, 232, 234, 1)
+  );
+}
