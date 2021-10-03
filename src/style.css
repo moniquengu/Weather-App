@@ -116,3 +116,10 @@ h1 {
     rgba(243, 232, 234, 1)
   );
 }
+.codeAuthor {
+  padding-top: 30px;
+  display: block;
+  text-align: center;
+  font-family: "Philosopher", sans-serif;
+  color: white;
+}
