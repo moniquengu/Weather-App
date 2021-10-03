@@ -64,6 +64,7 @@ h1 {
   color: rgba(118, 84, 173, 0.9);
   font-family: "Sawarabi Mincho", sans-serif;
   font-size: 17px;
+  text-transform: capitalize;
 }
 #city-search {
   width: 190px;
@@ -91,6 +92,7 @@ h1 {
   font-family: "Sawarabi Mincho", sans-serif;
   line-height: 50px;
   color: rgba(118, 84, 173, 0.9);
+  text-transform: capitalize;
 }
 .time {
   padding-top: 10px;
