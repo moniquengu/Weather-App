@@ -43,3 +43,32 @@ function showTime() {
 let time = new Date();
 showDay();
 showTime();
+
+//Show Month and Date
+console.log(time);
+function showMonth() {
+  let months = [
+    "December",
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "September",
+    "October",
+    "November",
+  ];
+  let month = months[time.getMonth()];
+  let currentMonth = document.querySelector("#currentMonth");
+  currentMonth.innerHTML = `${month} `;
+}
+function showDate() {
+  let date = time.getDate();
+  let currentDate = document.querySelector("#monthDate");
+  currentDate.innerHTML = `${date}`;
+}
+
+showMonth();
+showDate();
