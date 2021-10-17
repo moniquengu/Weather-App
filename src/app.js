@@ -1,5 +1,19 @@
 let apiKey = "fdc8a450df947256bc83a4a53890637a";
 
+//show Wind #5
+function showWind(wind) {
+  let newWind = Math.round(wind.data.wind.speed);
+  let currentWind = document.querySelector("#city-wind");
+  currentWind.innerHTML = `${newWind}`;
+}
+
+//show Humidity #4
+function showHumidity(humidity) {
+  let newHumidity = humidity.data.main.humidity;
+  let currentHumidity = document.querySelector("#city-humidity");
+  currentHumidity.innerHTML = `${newHumidity}`;
+}
+
 //show Temperature #2
 function showTemperature(temperature) {
   console.log(temperature);
@@ -17,6 +31,8 @@ function showCity(response) {
   newCity.innerHTML = `${currentCity}`;
   let apiCity = `https://api.openweathermap.org/data/2.5/weather?q=${currentCity}&appid=fdc8a450df947256bc83a4a53890637a&units=metric`;
   axios.get(apiCity).then(showTemperature);
+  axios.get(apiCity).then(showHumidity);
+  axios.get(apiCity).then(showWind);
 }
 let cityInput = document.querySelector("#city-search-bar");
 cityInput.addEventListener("submit", showCity);
