@@ -54,10 +54,16 @@ h1 {
   color: rgb(250, 231, 144);
   font-family: "Sawarabi Mincho", sans-serif;
   font-size: 14px;
-  text-decoration: none;
   vertical-align: top;
   text-align: left;
   letter-spacing: -1px;
+}
+
+.active {
+  text-decoration: none;
+}
+.active:hover {
+  cursor: default;
 }
 
 .mainWeatherStatus {
