@@ -3,10 +3,12 @@ let apiKey = "fdc8a450df947256bc83a4a53890637a";
 function showIcon(icon) {
   console.log(icon);
   let iconElement = document.querySelector("#weatherIcon");
+  let weatherDescription = document.querySelector("#mainWeatherDescription");
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${icon.data.weather[0].icon}@2x.png`
   );
+  weatherDescription.innerHTML = icon.data.weather[0].description;
 }
 //show Wind #5
 function showWind(wind) {
