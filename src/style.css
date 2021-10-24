@@ -122,10 +122,22 @@ h1 {
     rgba(243, 232, 234, 1)
   );
 }
-.codeAuthor {
+.codeAuthor,
+.codeLink,
+.linkedIn {
   padding-top: 30px;
   display: block;
   text-align: center;
   font-family: "Philosopher", sans-serif;
   color: white;
+  display: inline-block;
+}
+.codeLink:hover {
+  color: rgb(101, 70, 150);
+}
+.linkedIn {
+  text-decoration: none;
+}
+.linkedIn:hover {
+  color: rgba(118, 84, 173, 0.9);
 }
