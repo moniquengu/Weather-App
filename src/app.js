@@ -56,20 +56,20 @@ function showDay() {
   let dayText = document.querySelector("#current-day");
   dayText.innerHTML = newDay;
 }
-function showTime() {
-  let hours = time.getHours();
-  let minutes = time.getMinutes();
-  let currentTime = document.querySelector("#current-time");
-  if (minutes < 10) {
-    minutes = "0" + minutes;
-  } else {
-  }
-  currentTime.innerHTML = `${hours}:${minutes}`;
-}
+//function showTime() {
+//let hours = time.getHours();
+//let minutes = time.getMinutes();
+//let currentTime = document.querySelector("#current-time");
+//if (minutes < 10) {
+//minutes = "0" + minutes;
+// } else {
+//}
+//currentTime.innerHTML = `${hours}:${minutes}`;
+//}
 
 let time = new Date();
 showDay();
-showTime();
+//showTime();
 
 //Show Month and Date
 console.log(time);
@@ -99,3 +99,42 @@ function showDate() {
 
 showMonth();
 showDate();
+
+//Show Geolocation #7
+function showGeolocation(coordinate) {
+  console.log(coordinate);
+  let currentCity = coordinate.data.name;
+  let newCity = document.querySelector("#city-location");
+  newCity.innerHTML = `${currentCity}`;
+  let newTemperature = Math.round(coordinate.data.main.temp);
+  let currentTemperature = document.querySelector("#mainTemp-number");
+  currentTemperature.innerHTML = `${newTemperature}`;
+  let newHumidity = coordinate.data.main.humidity;
+  let currentHumidity = document.querySelector("#city-humidity");
+  currentHumidity.innerHTML = `${newHumidity}`;
+  let newWind = Math.round(coordinate.data.wind.speed);
+  let currentWind = document.querySelector("#city-wind");
+  currentWind.innerHTML = `${newWind}`;
+  let iconElement = document.querySelector("#weatherIcon");
+  let weatherDescription = document.querySelector("#mainWeatherDescription");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${coordinate.data.weather[0].icon}@2x.png`
+  );
+  weatherDescription.innerHTML = coordinate.data.weather[0].description;
+}
+
+function showCoordinate(position) {
+  console.log(position.coords.latitude);
+  console.log(position.coords.longitude);
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let apiCity = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=fdc8a450df947256bc83a4a53890637a&units=metric`;
+  axios.get(apiCity).then(showGeolocation);
+}
+
+function toggleGPS() {
+  navigator.geolocation.getCurrentPosition(showCoordinate);
+}
+let buttonGPS = document.querySelector("#buttonGPS");
+buttonGPS.addEventListener("click", toggleGPS);
