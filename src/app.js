@@ -1,5 +1,13 @@
 let apiKey = "fdc8a450df947256bc83a4a53890637a";
-
+//show weather icon and description #6
+function showIcon(icon) {
+  console.log(icon);
+  let iconElement = document.querySelector("#weatherIcon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${icon.data.weather[0].icon}@2x.png`
+  );
+}
 //show Wind #5
 function showWind(wind) {
   let newWind = Math.round(wind.data.wind.speed);
@@ -33,6 +41,7 @@ function showCity(response) {
   axios.get(apiCity).then(showTemperature);
   axios.get(apiCity).then(showHumidity);
   axios.get(apiCity).then(showWind);
+  axios.get(apiCity).then(showIcon);
 }
 let cityInput = document.querySelector("#city-search-bar");
 cityInput.addEventListener("submit", showCity);
