@@ -141,3 +141,105 @@ h1 {
 .linkedIn:hover {
   color: rgba(118, 84, 173, 0.9);
 }
+
+.weatherTextSpace1 {
+  position: relative;
+  left: 18px;
+  top: 20px;
+  border-left: 4px solid;
+  border-radius: 10px;
+  height: 180px;
+  display: block;
+  margin: 0 auto;
+  border-color: rgba(255, 200, 80, 0.6);
+}
+.subTitle {
+  text-align: center;
+  font-family: "Amita", cursive;
+  font-size: 22px;
+  padding-top: 10px;
+  color: rgba(118, 84, 173, 1);
+}
+.subTitleInstruction {
+  padding-bottom: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: rgba(118, 84, 173, 0.8);
+}
+.forecastCont {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-family: "Sawarabi Mincho", sans-serif;
+}
+.card {
+  height: 180px;
+  border: 1px solid rgba(118, 84, 173, 0.9);
+  background: rgb(251, 183, 63);
+  background: radial-gradient(
+    circle,
+    rgb(253, 220, 111) 0%,
+    rgb(244, 186, 186) 10%,
+    rgb(215, 188, 232) 100%
+  );
+  border-radius: 20px;
+}
+
+.card-body1,
+.card-body2,
+.card-body3,
+.card-body4,
+.card-body5 {
+  text-align: center;
+  padding-top: 18px;
+  font-family: "Sawarabi Mincho", sans-serif;
+  background: white;
+  opacity: 0;
+  transition: all 300ms ease-in-out;
+}
+.smallIcon1,
+.smallIcon2,
+.smallIcon3,
+.smallIcon4,
+.smallIcon5 {
+  font-size: 45px;
+  color: rgba(255, 220, 100, 1);
+}
+.weekDay1,
+.weekDay2,
+.weekDay3,
+.weekDay4,
+.weekDay5 {
+  color: rgba(118, 84, 173, 0.9);
+}
+.subTemperature1,
+.subTemperature2,
+.subTemperature3,
+.subTemperature4,
+.subTemperature5 {
+  color: rgba(118, 84, 173, 0.9);
+  font-size: 18px;
+}
+.subWeatherStatus1,
+.subWeatherStatus2,
+.subWeatherStatus3,
+.subWeatherStatus4,
+.subWeatherStatus5 {
+  color: rgba(118, 84, 173, 0.9);
+  font-size: 13px;
+  padding-bottom: 23px;
+}
+.card:hover .card-body1 {
+  opacity: 1;
+}
+.card:hover .card-body2 {
+  opacity: 1;
+}
+.card:hover .card-body3 {
+  opacity: 1;
+}
+.card:hover .card-body4 {
+  opacity: 1;
+}
+.card:hover .card-body5 {
+  opacity: 1;
+}
