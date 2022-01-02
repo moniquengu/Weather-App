@@ -113,7 +113,8 @@ h1 {
 }
 .humidity,
 .wind {
-  font-size: 16px;
+  font-size: 18px;
+  font-family: "Amita", cursive;
 }
 
 .currentHumidity,
@@ -171,7 +172,7 @@ h1 {
   padding-bottom: 20px;
   text-align: center;
   font-size: 14px;
-  color: rgba(118, 84, 173, 0.8);
+  color: rgb(186, 126, 178);
 }
 .forecastCont {
   padding-top: 30px;
