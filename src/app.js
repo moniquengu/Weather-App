@@ -57,8 +57,8 @@ function showForecast(response) {
         `
   <div class="col-sm-2">
             <div class="card" style="max-width:200px">
-              <div class="card-body1" style="max-width:200px">
-                <div class="weekDay1">${showForecastDay(forecastDay.dt)}</div>
+              <div class="card-body" style="max-width:200px">
+                <div class="weekDay">${showForecastDay(forecastDay.dt)}</div>
                 <div class="smallIcon">
                   <img src="http://openweathermap.org/img/wn/${
                     forecastDay.weather[0].icon
@@ -188,6 +188,7 @@ function showCoordinate(position) {
   let longitude = position.coords.longitude;
   let apiCity = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=fdc8a450df947256bc83a4a53890637a&units=metric`;
   axios.get(apiCity).then(showGeolocation);
+  axios.get(apiCity).then(getForecast);
 }
 
 function toggleGPS() {

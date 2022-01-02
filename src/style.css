@@ -32,9 +32,9 @@ h1 {
   padding-top: 0px;
 }
 .mainWeatherIcon {
-  font-size: 90px;
+  font-size: 100px;
   color: rgba(255, 220, 100, 1);
-  padding-bottom: 15px;
+  padding-bottom: 10px;
 }
 .line1 {
   width: 100px;
@@ -97,7 +97,7 @@ h1 {
 .wind {
   font-family: "Sawarabi Mincho", sans-serif;
   line-height: 50px;
-  color: rgba(118, 84, 173, 0.9);
+  color: rgb(186, 126, 178);
   text-transform: capitalize;
 }
 .time {
@@ -108,9 +108,16 @@ h1 {
 .mainDate {
   font-size: 20px;
 }
+.location {
+  color: rgba(118, 84, 173, 1);
+}
 .humidity,
 .wind {
   font-size: 16px;
+}
+
+.currentHumidity,
+.currentWind {
 }
 #line2 {
   border: 0;
@@ -129,7 +136,7 @@ h1 {
   display: block;
   text-align: center;
   font-family: "Philosopher", sans-serif;
-  color: white;
+  color: rgb(186, 126, 178);
   display: inline-block;
 }
 .codeLink:hover {
@@ -184,11 +191,7 @@ h1 {
   border-radius: 20px;
 }
 
-.card-body1,
-.card-body2,
-.card-body3,
-.card-body4,
-.card-body5 {
+.card-body {
   text-align: center;
   padding-top: 18px;
   font-family: "Sawarabi Mincho", sans-serif;
@@ -199,34 +202,17 @@ h1 {
 .smallIcon {
   font-size: 15px;
 }
-.weekDay1,
-.weekDay2,
-.weekDay3,
-.weekDay4,
-.weekDay5 {
-  color: rgba(118, 84, 173, 0.9);
+.weekDay {
+  color: rgba(118, 84, 173, 1);
 }
 .subTemperature {
-  color: rgba(118, 84, 173, 0.9);
-  font-size: 18px;
+  color: rgb(235, 175, 75);
+  font-size: 17px;
 }
 .subWeatherStatus {
-  color: rgba(118, 84, 173, 0.9);
-  font-size: 13px;
-  padding-bottom: 20px;
+  color: rgb(186, 126, 178);
+  font-size: 15px;
 }
-.card:hover .card-body1 {
-  opacity: 1;
-}
-.card:hover .card-body2 {
-  opacity: 1;
-}
-.card:hover .card-body3 {
-  opacity: 1;
-}
-.card:hover .card-body4 {
-  opacity: 1;
-}
-.card:hover .card-body5 {
+.card:hover .card-body {
   opacity: 1;
 }
