@@ -36,6 +36,28 @@ function showTemperature(temperature) {
 //show Forecast
 function showForecast(response) {
   console.log(response.data.daily);
+  let forecastElement = document.querySelector("#forecastDay");
+  let forecastHTML = `<div class="row"><div class="space3 col-sm-1"></div>`;
+  let days = ["TUE", "WED", "THU", "FRI", "SAT"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+  <div class="col-sm-2">
+            <div class="card" style="max-width:200px">
+              <div class="card-body1" style="max-width:200px">
+                <div class="weekDay1">${day}</div>
+                <div class="smallIcon1">
+                  <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="">
+                  </div>
+                <div class="subTemperature1">26℃</div>
+                <div class="subWeatherStatus1">Part cloudy</div>
+              </div>
+            </div>
+          </div>`;
+  });
+  forecastHTML = forecastHTML + `<div class="space3 col-sm-1"></div></div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 //find forecast Co-ords
