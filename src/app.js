@@ -131,7 +131,6 @@ showDay();
 console.log(time);
 function showMonth() {
   let months = [
-    "December",
     "January",
     "February",
     "March",
@@ -142,8 +141,10 @@ function showMonth() {
     "September",
     "October",
     "November",
+    "December",
   ];
   let month = months[time.getMonth()];
+  console.log(time.getMonth());
   let currentMonth = document.querySelector("#currentMonth");
   currentMonth.innerHTML = `${month} `;
 }
