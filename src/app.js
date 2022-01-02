@@ -197,29 +197,3 @@ function toggleGPS() {
 let buttonGPS = document.querySelector("#buttonGPS");
 buttonGPS.addEventListener("click", toggleGPS);
 toggleGPS();
-
-//Toggle Celcius and farenheit #8
-function showFarenheit() {
-  event.preventDefault();
-  let farenheitTemp = (celciusTemp * 9) / 5 + 32;
-  let currentTemperature = document.querySelector("#mainTemp-number");
-  currentTemperature.innerHTML = Math.round(farenheitTemp);
-  celciusButton.classList.remove("active");
-  farenheitButton.classList.add("active");
-}
-
-function showCelcius() {
-  event.preventDefault();
-  let currentTemperature = document.querySelector("#mainTemp-number");
-  currentTemperature.innerHTML = Math.round(celciusTemp);
-  celciusButton.classList.add("active");
-  farenheitButton.classList.remove("active");
-}
-
-let celciusTemp = null;
-
-let farenheitButton = document.querySelector("#mainTemp-Farenheit");
-farenheitButton.addEventListener("click", showFarenheit);
-
-let celciusButton = document.querySelector("#mainTemp-Celcius");
-celciusButton.addEventListener("click", showCelcius);
