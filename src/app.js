@@ -33,6 +33,19 @@ function showTemperature(temperature) {
   celciusTemp = temperature.data.main.temp;
 }
 
+//show Forecast
+function showForecast(response) {
+  console.log(response.data.daily);
+}
+
+//find forecast Co-ords
+function getForecast(coordinates) {
+  let coordinateCity = coordinates.data.coord;
+  let apiCoord = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinateCity.lat}&lon=${coordinateCity.lon}&appid=fdc8a450df947256bc83a4a53890637a&units=metric`;
+  console.log(apiCoord);
+  axios.get(apiCoord).then(showForecast);
+}
+
 //show city #1
 function showCity(response) {
   event.preventDefault();
@@ -45,6 +58,7 @@ function showCity(response) {
   axios.get(apiCity).then(showHumidity);
   axios.get(apiCity).then(showWind);
   axios.get(apiCity).then(showIcon);
+  axios.get(apiCity).then(getForecast);
 }
 let cityInput = document.querySelector("#city-search-bar");
 cityInput.addEventListener("submit", showCity);
