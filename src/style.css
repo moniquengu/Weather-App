@@ -196,11 +196,7 @@ h1 {
   opacity: 0;
   transition: all 300ms ease-in-out;
 }
-.smallIcon1,
-.smallIcon2,
-.smallIcon3,
-.smallIcon4,
-.smallIcon5 {
+.smallIcon {
   font-size: 15px;
 }
 .weekDay1,
@@ -210,19 +206,11 @@ h1 {
 .weekDay5 {
   color: rgba(118, 84, 173, 0.9);
 }
-.subTemperature1,
-.subTemperature2,
-.subTemperature3,
-.subTemperature4,
-.subTemperature5 {
+.subTemperature {
   color: rgba(118, 84, 173, 0.9);
   font-size: 18px;
 }
-.subWeatherStatus1,
-.subWeatherStatus2,
-.subWeatherStatus3,
-.subWeatherStatus4,
-.subWeatherStatus5 {
+.subWeatherStatus {
   color: rgba(118, 84, 173, 0.9);
   font-size: 13px;
   padding-bottom: 20px;

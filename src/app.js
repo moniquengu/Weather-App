@@ -8,7 +8,7 @@ function showIcon(icon) {
     "src",
     `http://openweathermap.org/img/wn/${icon.data.weather[0].icon}@2x.png`
   );
-  weatherDescription.innerHTML = icon.data.weather[0].description;
+  weatherDescription.innerHTML = icon.data.weather[0].main;
 }
 //show Wind #5
 function showWind(wind) {
@@ -33,28 +33,47 @@ function showTemperature(temperature) {
   celciusTemp = temperature.data.main.temp;
 }
 
+//show forecast days
+function showForecastDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+  return days[day];
+}
+
 //show Forecast
 function showForecast(response) {
-  console.log(response.data.daily);
+  let dailyForecast = response.data.daily;
+  console.log(dailyForecast);
   let forecastElement = document.querySelector("#forecastDay");
+
   let forecastHTML = `<div class="row"><div class="space3 col-sm-1"></div>`;
+
   let days = ["TUE", "WED", "THU", "FRI", "SAT"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  dailyForecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
   <div class="col-sm-2">
             <div class="card" style="max-width:200px">
               <div class="card-body1" style="max-width:200px">
-                <div class="weekDay1">${day}</div>
-                <div class="smallIcon1">
-                  <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="">
+                <div class="weekDay1">${showForecastDay(forecastDay.dt)}</div>
+                <div class="smallIcon">
+                  <img src="http://openweathermap.org/img/wn/${
+                    forecastDay.weather[0].icon
+                  }@2x.png" alt="">
                   </div>
-                <div class="subTemperature1">26℃</div>
-                <div class="subWeatherStatus1">Part cloudy</div>
+                <div class="subTemperature">${Math.round(
+                  forecastDay.temp.max
+                )}° | ${Math.round(forecastDay.temp.min)}°</div>
+                <div class="subWeatherStatus">${
+                  forecastDay.weather[0].main
+                }</div>
               </div>
             </div>
           </div>`;
+    }
   });
   forecastHTML = forecastHTML + `<div class="space3 col-sm-1"></div></div>`;
   forecastElement.innerHTML = forecastHTML;
@@ -158,7 +177,7 @@ function showGeolocation(coordinate) {
     "src",
     `http://openweathermap.org/img/wn/${coordinate.data.weather[0].icon}@2x.png`
   );
-  weatherDescription.innerHTML = coordinate.data.weather[0].description;
+  weatherDescription.innerHTML = coordinate.data.weather[0].main;
   celciusTemp = coordinate.data.main.temp;
 }
 
